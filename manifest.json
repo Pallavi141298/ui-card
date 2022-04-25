@@ -1,0 +1,117 @@
+{
+    "_version": "1.17.0",
+    "sap.app": {
+        "id": "com.workflowDemo.WorkFlowCard",
+        "type": "card",
+        "title": "",
+        "subTitle": "",
+        "applicationVersion": {
+            "version": "1.0.0"
+        }
+    },
+    "sap.ui": {
+        "technology": "UI5",
+        "deviceTypes": {
+            "desktop": true,
+            "phone": true,
+            "tablet": true
+        },
+        "icons": {
+            "icon": "sap-icon://product"
+        }
+    },
+    "sap.card": {
+        "configuration": {
+            "actionHandlers": {
+                "submit": {
+                    "url": "./action-submit.json",
+                    "method": "GET"
+                }
+            }
+        },
+        "type": "AdaptiveCard",
+        "designtime": "dt/configuration",
+        "header": {
+            "title": "Request For Leave"
+        },
+        "content": {
+            "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+            "type": "AdaptiveCard",
+            "version": "1.0",
+            "body": [
+                {
+                    "type": "TextBlock",
+                    "text": "Name",
+                    "isSubtle": true,
+                    "size": "medium"
+                },
+                {
+                    "type": "Input.Text",
+                    "placeholder": "Name",
+                    "style": "text",
+                    "id": "SimpleVal"
+                },
+                {
+                    "type": "TextBlock",
+                    "text": "Days",
+                    "isSubtle": true,
+                    "size": "medium"
+                },
+                {
+                    "type": "Input.Text",
+                    "placeholder": "Days",
+                    "style": "number",
+                    "id": "numVal"
+                },
+                {
+                    "type": "TextBlock",
+                    "text": "Reason",
+                    "isSubtle": true,
+                    "size": "medium"
+                },
+                {
+                    "type": "Input.Text",
+                    "placeholder": "Reason",
+                    "id": "ResVal",
+                    "maxLength": 10
+                },
+                {
+                    "type": "TextBlock",
+                    "text": "FormDate",
+                    "isSubtle": true,
+                    "size": "medium"
+                },
+                {
+                    "type": "Input.Date",
+                    "label": "Starting Date",
+                    "isRequired": true,
+                    "placeholder": "Start Date",
+                    "id": "DateVal"
+                },
+                {
+                    "type": "TextBlock",
+                    "text": "EndDate",
+                    "isSubtle": true,
+                    "size": "medium"
+                },
+                {
+                    "type": "Input.Date",
+                    "label": "Ending Date",
+                    "isRequired": true,
+                    "placeholder": "Start Date",
+                    "id": "DateVal"
+                }
+            ],
+            "actions": [
+                {
+                    "type": "Action.Submit",
+                    "title": "Submit",
+                    "press": "onCardAction"
+                }
+            ]
+        }
+    },
+    "sap.platform.mobilecards": {
+        "compatible": true
+    }
+}
